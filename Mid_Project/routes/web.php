@@ -18,5 +18,5 @@ Route::get('/generate_voucher','HomeController@generate_voucher');
 Route::get('/salary_history','HomeController@salary_history');
 Route::get('/salary_details','HomeController@salary_details');
 Route::get('/apply_leave','HomeController@apply_leave');
-
+Route::post('/generate_salary', 'CalculationController@calculate_total')->name('calculate');
 

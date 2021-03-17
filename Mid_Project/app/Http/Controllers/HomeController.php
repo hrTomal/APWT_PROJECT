@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Person;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -27,5 +29,10 @@ class HomeController extends Controller
     
     public function profile(){
         return view('home.profile');
+    }
+
+    public function show_salary_list(){
+        $personlist = Person::paginate(15);
+        return view('accountant.salary_details')->with('personlist', $personlist);
     }
 }

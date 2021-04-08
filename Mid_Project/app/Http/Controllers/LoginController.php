@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class LoginController extends Controller
 {
     public function index(){
-        return view('login.index');
+        return view('login.index2');
     }
 
     public function verify(Request $req){
@@ -26,7 +26,10 @@ class LoginController extends Controller
 
         }elseif(count($user) > 0 ){
             $user = Person::find($req->UserId);
+
             $req->session()->put('Name', $user->Name);
+            $req->session()->put('UserId', $user->UserId);
+            
             if($user->Type == 'accountant'){
                 return redirect('/accountant');
             }

@@ -21,7 +21,8 @@
 	</div>
 
 	<div id="footer">
-		copyright@2021
+		<hr>
+		copyright@2021 || Priyozone.net
 	</div>
 
 </body>

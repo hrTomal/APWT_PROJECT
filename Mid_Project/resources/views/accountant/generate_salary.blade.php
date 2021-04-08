@@ -18,7 +18,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="button" value="Send for approval"></td>
+                <td><input type='button' onclick="location.href='/send_for_salary_approval';" value="Send for Approval"></input></td>
             </tr>
         </table>
     </form>

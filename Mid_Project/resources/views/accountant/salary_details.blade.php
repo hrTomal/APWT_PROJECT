@@ -15,14 +15,13 @@ Salary Details...
             <td>Designation</td>
             <td>Salary</td>
         </tr>
-        @for($i=0; $i < count($personlist); $i++)
+        @foreach ($personlist as $personlist)
         <tr>
-            <td>{{ $personlist[$i]['Name'] }} </td>
-            <td>{{ $personlist[$i]['Type'] }}</td>
-            <td>{{ $personlist[$i]['Salary'] }}</td>
+            <td>{{ $personlist->Name }} </td>
+            <td>{{ $personlist->Type }} </td>
+            <td>{{ $personlist->Salary }} </td>
         </tr>
-        @endfor
-        
+        @endforeach        
     </table>
-    {{ $personlist->links() }}
+    
 @endsection

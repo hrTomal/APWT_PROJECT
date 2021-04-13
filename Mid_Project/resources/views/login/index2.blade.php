@@ -23,6 +23,7 @@
                 <input type='button' onclick="location.href='/register';" value="Sign up"></input>
 		    </form>  
             {{session('msg')}}
+            {{session('message')}}
         </div>
     
 </body>

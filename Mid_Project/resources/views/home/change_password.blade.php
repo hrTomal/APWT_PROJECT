@@ -7,6 +7,44 @@
     <title>Register</title>
 </head>
 <body>
-    
+    <form method='post'>
+    @csrf
+        <table>
+            <tr>
+                <td>Old Password:  </td>
+                <td>
+                <input type="password" name="Password" value="{{ $user['Password']}}" readonly> 
+                </td>
+            </tr>
+            <td>Old Password:  </td>
+                <td>
+                <input type="password" name="oldPassword"> 
+                </td>
+            <tr>
+                <td>New Password:  </td>
+                <td>
+                <input type="password" name="newPassword"> 
+                </td>
+            </tr>
+            <tr>
+                <td>Retype New Password:  </td>
+                <td>
+                <input type="password" name="Confirm_password"> 
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                <input type="submit" value="Submit">
+                </td>
+            </tr>
+            {{session('msg')}}
+
+        </table>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+
+    </form>    
 </body>
 </html>

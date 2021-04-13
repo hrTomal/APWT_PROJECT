@@ -11,7 +11,6 @@
 
 <div class="card">
   <img src="{{asset('/profile_pic')}}/{{$user['profile_pic']}}" alt="profile picture" style="width:55%">
-  <!-- <img src="{{asset('img/profile.png')}}" alt="profile picture" style="width:55%"> -->
   <h1>{{ $user['Name']}}</h1>
   <p class="title">{{ $user['Type'] }}</p>
   <hr>
@@ -24,9 +23,9 @@
   <hr>
 
   <div style="margin: 24px 0;">
-  <button onclick="location.href='/update_profile/{{ $user['UserId'] }}';">Update profile</button> 
+    <p>Are You Sure? </p> 
   </div>
-  <p><button onclick="location.href='/change_password/{{ session('UserId') }}';">Change Password</button></p>
+  <p><button onclick="location.href='/destroy_user/{{ $user['UserId'] }}';">Delete</button></p>
 </div>
 
 </body>

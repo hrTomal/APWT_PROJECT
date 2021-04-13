@@ -40,9 +40,8 @@
 					<td>Role: </td>
 					<td>
 						<select name='Type'>
-							<!-- <option value="Admin"> Admin </option> -->
-							<!-- <option value="accountant"> Accountant </option> -->
-                            <option value="customer"> Customer </option>
+							<option value="admin"> Admin </option>
+						    <option value="accountant"> Accountant </option>
 						</select>
 					</td>
 				</tr>

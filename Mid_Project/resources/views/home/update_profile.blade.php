@@ -1,67 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Register</title>
-    <h1>Registration Page</h1>
+    <title>Update</title>
+    <h1>Update Profile</h1>
 </head>
 <body>
 <form method="post" enctype="multipart/form-data">
     	@csrf
 		<fieldset>
-			<legend>Register </legend>
+			<legend>Update Profile </legend>
 			<table>
-				<!-- <tr>
+                <tr>
 					<td>User id: </td>
-					<td><input type="text" name="UserId" value="{{old('UserId')}}"></td>
-				</tr> -->
+					<td><input type="text" name="UserId" value="{{session('UserId')}}" readonly></td>
+				</tr>
 				<tr>
 					<td>Profile Image: </td>
 					<td><input type="file" name="img"></td>
 				</tr>
 				<tr>
 					<td>Name: </td>
-					<td><input type="text" name="Name" value="{{old('Name')}}"></td>
+					<td><input type="text" name="Name" value="{{ $user['Name'] }}"></td>
 				</tr>
 				<tr>
 					<td>Email: </td>
-					<td><input type="text" name="Email" value="{{old('Email')}}"></td>
+					<td><input type="text" name="Email" value="{{ $user['Email'] }}"></td>
 				</tr>
 				<tr>
 					<td>Gender</td>
 					<td>
-						<select name='Gender'>
+						<select name='Gender' value="{{ $user['Gender'] }}">
 							<option value="Male"> Male </option>
 							<option value="Female"> Female </option>
                             <option value="Other"> Other </option>                            
 						</select>
 					</td>
 				</tr>
-				<tr>
+				<!-- <tr>
 					<td>Role: </td>
 					<td>
-						<select name='Type'>
-							<!-- <option value="Admin"> Admin </option> -->
-							<!-- <option value="accountant"> Accountant </option> -->
+						<select name='Type' value="{{ $user['Type'] }}">
+							<option value="admin"> Admin </option>
+							<option value="accountant"> Accountant </option>
                             <option value="customer"> Customer </option>
 						</select>
 					</td>
-				</tr>
+				</tr> -->
 				<tr>
 					<td>Phone: </td>
-					<td><input type="text" name="PhoneNo" value="{{old('PhoneNo')}}"></td>
+					<td><input type="text" name="PhoneNo" value="{{ $user['PhoneNo'] }}"></td>
 				</tr>
 				<tr>
 					<td>Date of Birth: </td>
-					<td><input type="date" name="DOB" value="{{old('DOB')}}"></td>
+					<td><input type="date" name="DOB" value="{{ $user['DOB'] }}"></td>
 				</tr>
-				<tr>
-					<td>Password: </td>
-					<td><input type="password" name="Password" value="{{old('Password')}}"></td>
-				</tr>
-				<tr>
-					<td>Confirm Password: </td>
-					<td><input type="password" name="password_confirmation" value="{{old('password_confirmation')}}"></td>
-				</tr>
+                <tr>
 					<td></td>
 					<td><input type="submit" name="submit" value="Save"></td>
 				</tr>

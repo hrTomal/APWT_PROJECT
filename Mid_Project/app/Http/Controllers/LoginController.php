@@ -29,6 +29,8 @@ class LoginController extends Controller
 
             $req->session()->put('Name', $user->Name);
             $req->session()->put('UserId', $user->UserId);
+            $req->session()->put('Type', $user->Type);
+
             
             if($user->Type == 'accountant'){
                 return redirect('/accountant');
@@ -36,7 +38,7 @@ class LoginController extends Controller
             elseif($user->Type == 'admin'){
                 //return redirect('/admin');
             }
-            elseif($user->Type == 'super_admin'){
+            elseif($user->Type == 'sa'){
                 return redirect('/super_admin');
             }
             else{
